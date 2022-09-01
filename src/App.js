@@ -1,43 +1,71 @@
 import './App.css';
-import Dashboard from './Dashboard';
+import Dash from './Dash';
 import Login from './Login';
 import ForgotPassword from './ForgotPassword';
 import Register from './Register';
 import { Routes, Route } from "react-router-dom";
-import Buttons from './Buttons';
-import Cards from './Cards';
-import Colors from './Colors';
-import Borders from './Borders';
-import Animations from './Animations';
-import Others from './Others';
-import ErrorPage from './ErrorPage';
-import Charts from './Charts';
-import Tables from './Tables';
-import BlankPage from './BlankPage';
+import Button from './Button';
+import Card from './Card';
+import Color from './Color';
+import Border from './Border';
+import Animation from './Animation';
+import Other from './Other';
+import Error from './Error';
+import Chart from './Chart';
+import Table from './Table';
+import Blank from './Blank';
+import SideBar from './SideBar';
+import Logout from './Logout';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 function App() {
 
   return (
-    <div>
+    <div id="page-top">
       <Routes>
-        <Route path="/*" element={<Dashboard />} />
-        <Route path="/dashboard/*" element={<Dashboard/>}/>
-        <Route path="/buttons/*" element={<Buttons />} />
-        <Route path="/cards/*" element={<Cards />} />
-        <Route path="/colors/*" element={<Colors />} />
-        <Route path="/borders/*" element={<Borders />} />
-        <Route path="/animations/*" element={<Animations />} />
-        <Route path="/others/*" element={<Others />} />
         <Route path="/login/*" element={<Login />} />
         <Route path="/register/*" element={<Register />} />
         <Route path="/forgot_password/*" element={<ForgotPassword />} />
-        <Route path="/404/*" element={<ErrorPage />} />
-        <Route path="/blank/*" element={<BlankPage />} />
-        <Route path="/charts/*" element={<Charts />} />
-        <Route path="/tables/*" element={<Tables />} />
+
       </Routes>
+      <div id="wrapper">
+        <SideBar />
+        <div id="content-wrapper" className="d-flex flex-column">
+
+          {/* <!-- Main Content --> */}
+          <div id="content">
+            <Navbar />
+            <div className="container-fluid">
+              <Routes>
+                <Route path="/*" element={<Dash />} />
+                <Route path="/dashboard/*" element={<Dash />} />
+                <Route path="/buttons/*" element={<Button />} />
+                <Route path="/cards/*" element={<Card />} />
+                <Route path="/colors/*" element={<Color />} />
+                <Route path="/borders/*" element={<Border />} />
+                <Route path="/animations/*" element={<Animation />} />
+                <Route path="/404/*" element={<Error />} />
+                <Route path="/blank/*" element={<Blank />} />
+                <Route path="/others/*" element={<Other />} />
+                <Route path="/charts/*" element={<Chart />} />
+                <Route path="/tables/*" element={<Table />} />
+              </Routes>
+            </div>
+          </div>
+          <Footer />
+        </div>
+      </div>
+      <a className="scroll-to-top rounded" href="#page-top">
+        <i className="fas fa-angle-up"></i>
+      </a>
+      <Logout />
     </div>
   );
 }
 
 export default App;
+
+
+
+
