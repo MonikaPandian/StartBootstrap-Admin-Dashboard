@@ -117,3 +117,9 @@ const Animation = () => {
 }
 
 export default Animation;
+
+
+// [[redirects]] 
+// from = "/*" 
+// to ="/index.html" 
+// status=200
