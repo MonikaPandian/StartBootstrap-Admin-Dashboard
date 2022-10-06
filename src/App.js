@@ -27,7 +27,6 @@ function App() {
         <Route path="/login/*" element={<Login />} />
         <Route path="/register/*" element={<Register />} />
         <Route path="/forgot_password/*" element={<ForgotPassword />} />
-
       </Routes>
       <div id="wrapper">
         <SideBar />
